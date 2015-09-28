@@ -1,0 +1,10 @@
+<%@val body: String %>
+<%@val title: String = "No title" %>
+<html>
+  <head>
+  </head>
+  <body>
+    <h2>${title}</h2>
+    ${unescape(body)}
+  </body>
+</html>

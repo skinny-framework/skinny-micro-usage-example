@@ -1,0 +1,2 @@
+<%@val name: String = "world" %>
+<p>Hello, ${name}!</p>
