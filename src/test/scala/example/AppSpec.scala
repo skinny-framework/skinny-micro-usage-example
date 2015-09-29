@@ -42,11 +42,11 @@ class AppSpec extends SkinnyFunSpec with JSONStringOps {
     it("returns Set-Cookie headers") {
       get("/cookies") {
         status should equal(200)
-        response.headers("Set-Cookie") should equal(Seq("foo=bar", "foo=bar;Domain=example.com"))
+        response.headers("Set-Cookie") should equal(Seq("foo=bar", "foo=bar;Domain=localhost"))
       }
       get("/cookies-2") {
         status should equal(200)
-        response.headers("Set-Cookie") should equal(Seq("foo=bar", "foo=bar;Domain=example.com"))
+        response.headers("Set-Cookie") should equal(Seq("foo=bar", "foo=bar;Domain=localhost"))
       }
     }
 

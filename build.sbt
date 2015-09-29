@@ -8,10 +8,9 @@ lazy val root = (project in file("."))
     dependencyOverrides := Set("org.scala-lang" %  "scala-compiler" % scalaVersion.value), // for Scalate
     libraryDependencies ++= Seq(
       "org.skinny-framework" %% "skinny-micro"         % skinnyMicroVersion % Compile,
-      "org.skinny-framework" %% "skinny-micro-server"  % skinnyMicroVersion % Compile,
       "org.skinny-framework" %% "skinny-micro-jackson" % skinnyMicroVersion % Compile,
-      // "org.skinny-framework" %% "skinny-micro-json4s"  % skinnyMicroVersion % Compile,
       "org.skinny-framework" %% "skinny-micro-scalate" % skinnyMicroVersion % Compile,
+      "javax.servlet"        %  "javax.servlet-api"    % "3.1.0"            % "container;provided;test",
       "ch.qos.logback"       %  "logback-classic"      % "1.1.3"            % Compile,
       "org.eclipse.jetty"    %  "jetty-webapp"         % "9.2.13.v20150730" % "container",
       "org.skinny-framework" %% "skinny-micro-test"    % skinnyMicroVersion % Test
@@ -21,5 +20,7 @@ lazy val root = (project in file("."))
   )
   .settings(servletSettings)
   .settings(scalariformSettings)
+  // If you'd like to need Scalate precompilation, enable this settings too
+  //.settings(scalateSettings)
 
 lazy val skinnyMicroVersion = "0.9.13"

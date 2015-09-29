@@ -103,7 +103,7 @@ object App
   //
   val exampleCookies = Seq(
     Cookie("foo" -> "bar"),
-    Cookie("foo" -> "bar").withOptions(domain = "example.com")
+    Cookie("foo" -> "bar").withOptions(domain = "localhost")
   )
   // AtionResult can hold cookies to be set
   get("/cookies") { implicit ctx =>
