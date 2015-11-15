@@ -12,7 +12,7 @@ lazy val root = (project in file("."))
       "org.skinny-framework" %% "skinny-micro-scalate" % skinnyMicroVersion % Compile,
       "javax.servlet"        %  "javax.servlet-api"    % "3.1.0"            % "container;provided;test",
       "ch.qos.logback"       %  "logback-classic"      % "1.1.3"            % Compile,
-      "org.eclipse.jetty"    %  "jetty-webapp"         % "9.2.13.v20150730" % "container",
+      "org.eclipse.jetty"    %  "jetty-webapp"         % "9.2.14.v20151106" % "container",
       "org.skinny-framework" %% "skinny-micro-test"    % skinnyMicroVersion % Test
     ),
     mainClass in Compile := Some("skinny.standalone.JettyLauncher"),
@@ -23,4 +23,4 @@ lazy val root = (project in file("."))
   // If you'd like to need Scalate precompilation, enable this settings too
   //.settings(scalateSettings)
 
-lazy val skinnyMicroVersion = "0.9.13"
+lazy val skinnyMicroVersion = "1.0.0.RC3"
