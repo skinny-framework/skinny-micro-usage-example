@@ -15,6 +15,8 @@ lazy val root = (project in file("."))
       "org.eclipse.jetty"    %  "jetty-webapp"         % "9.2.14.v20151106" % "container",
       "org.skinny-framework" %% "skinny-micro-test"    % skinnyMicroVersion % Test
     ),
+    transitiveClassifiers in Global := Seq(Artifact.SourceClassifier),
+    incOptions := incOptions.value.withNameHashing(true),
     mainClass in Compile := Some("skinny.standalone.JettyLauncher"),
     scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature")
   )
