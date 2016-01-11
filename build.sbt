@@ -25,4 +25,4 @@ lazy val root = (project in file("."))
   // If you'd like to need Scalate precompilation, enable this settings too
   //.settings(scalateSettings)
 
-lazy val skinnyMicroVersion = "1.0.0"
+lazy val skinnyMicroVersion = "1.0.1"
