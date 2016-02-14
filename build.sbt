@@ -11,8 +11,8 @@ lazy val root = (project in file("."))
       "org.skinny-framework" %% "skinny-micro-jackson" % skinnyMicroVersion % Compile,
       "org.skinny-framework" %% "skinny-micro-scalate" % skinnyMicroVersion % Compile,
       "javax.servlet"        %  "javax.servlet-api"    % "3.1.0"            % "container;provided;test",
-      "ch.qos.logback"       %  "logback-classic"      % "1.1.3"            % Compile,
-      "org.eclipse.jetty"    %  "jetty-webapp"         % "9.2.14.v20151106" % "container",
+      "ch.qos.logback"       %  "logback-classic"      % "1.1.4"            % Compile,
+      "org.eclipse.jetty"    %  "jetty-webapp"         % "9.2.15.v20160210" % "container",
       "org.skinny-framework" %% "skinny-micro-test"    % skinnyMicroVersion % Test
     ),
     transitiveClassifiers in Global := Seq(Artifact.SourceClassifier),
@@ -25,4 +25,4 @@ lazy val root = (project in file("."))
   // If you'd like to need Scalate precompilation, enable this settings too
   //.settings(scalateSettings)
 
-lazy val skinnyMicroVersion = "1.0.1"
+lazy val skinnyMicroVersion = "1.0.3"
