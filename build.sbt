@@ -3,7 +3,7 @@ lazy val root = (project in file("."))
     organization := "org.skinny-framework",
     name := "skinny-micro-usage-example",
     version := "0.1",
-    scalaVersion := "2.11.8",
+    scalaVersion := "2.12.2",
     resolvers += "sonatype releases" at "https://oss.sonatype.org/content/repositories/releases",
     dependencyOverrides := Set("org.scala-lang" %  "scala-compiler" % scalaVersion.value), // for Scalate
     libraryDependencies ++= Seq(
@@ -11,8 +11,8 @@ lazy val root = (project in file("."))
       "org.skinny-framework" %% "skinny-micro-jackson" % skinnyMicroVersion % Compile,
       "org.skinny-framework" %% "skinny-micro-scalate" % skinnyMicroVersion % Compile,
       "javax.servlet"        %  "javax.servlet-api"    % "3.1.0"            % "container;provided;test",
-      "ch.qos.logback"       %  "logback-classic"      % "1.1.7"            % Compile,
-      "org.eclipse.jetty"    %  "jetty-webapp"         % "9.2.18.v20160721" % "container",
+      "ch.qos.logback"       %  "logback-classic"      % "1.2.3"            % Compile,
+      "org.eclipse.jetty"    %  "jetty-webapp"         % "9.3.19.v20170502" % "container",
       "org.skinny-framework" %% "skinny-micro-test"    % skinnyMicroVersion % Test
     ),
     transitiveClassifiers in Global := Seq(Artifact.SourceClassifier),
@@ -25,4 +25,4 @@ lazy val root = (project in file("."))
   // If you'd like to need Scalate precompilation, enable this settings too
   //.settings(scalateSettings)
 
-lazy val skinnyMicroVersion = "1.1.0"
+lazy val skinnyMicroVersion = "1.2.+"

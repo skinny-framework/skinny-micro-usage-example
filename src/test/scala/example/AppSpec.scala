@@ -13,7 +13,7 @@ class AppSpec extends SkinnyFunSpec with JSONStringOps {
       get("/") {
         status should equal(200)
         body.startsWith("<html>") should equal(true)
-        header("Content-Type") should equal("text/html; charset=UTF-8")
+        header("Content-Type") should equal("text/html;charset=utf-8")
       }
     }
 
