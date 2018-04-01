@@ -14,10 +14,10 @@ import skinny.micro.contrib.ScalateSupport
  * If the web app deals with Future values on it, using AsyncWebApp is preferred because it makes safer than WebApp.
  */
 object App
-    extends AsyncWebApp
-    with JSONSupport
-    with JSONParamsAutoBinderSupport
-    with ScalateSupport {
+  extends AsyncWebApp
+  with JSONSupport
+  with JSONParamsAutoBinderSupport
+  with ScalateSupport {
 
   // ---------------------------------------------
   // before filter
@@ -103,8 +103,7 @@ object App
   //
   val exampleCookies = Seq(
     Cookie("foo" -> "bar"),
-    Cookie("foo" -> "bar").withOptions(domain = "localhost")
-  )
+    Cookie("foo" -> "bar").withOptions(domain = "localhost"))
   // AtionResult can hold cookies to be set
   get("/cookies") { implicit ctx =>
     Ok(body = "ok", cookies = exampleCookies)
