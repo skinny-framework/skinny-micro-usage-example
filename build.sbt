@@ -1,14 +1,14 @@
 import skinny.servlet._, ServletPlugin._, ServletKeys._
-lazy val jettyVersion = "9.4.9.v20180320"
+lazy val jettyVersion = "9.4.15.v20190215"
 
 lazy val root = (project in file("."))
   .settings(
     organization := "org.skinny-framework",
     name := "skinny-micro-usage-example",
     version := "0.1",
-    scalaVersion := "2.12.4",
-    resolvers += "sonatype releases" at "https://oss.sonatype.org/content/repositories/releases",
-    dependencyOverrides := Set("org.scala-lang" %  "scala-compiler" % scalaVersion.value), // for Scalate
+    scalaVersion := "2.12.8",
+    resolvers += "sonatype staging" at "https://oss.sonatype.org/content/repositories/staging",
+    dependencyOverrides := Seq("org.scala-lang" %  "scala-compiler" % scalaVersion.value), // for Scalate
     libraryDependencies ++= Seq(
       "org.skinny-framework" %% "skinny-micro"         % skinnyMicroVersion % Compile,
       "org.skinny-framework" %% "skinny-micro-server"  % skinnyMicroVersion % Compile,
@@ -21,7 +21,6 @@ lazy val root = (project in file("."))
       "org.skinny-framework" %% "skinny-micro-test"    % skinnyMicroVersion % Test
     ),
     transitiveClassifiers in Global := Seq(Artifact.SourceClassifier),
-    incOptions := incOptions.value.withNameHashing(true),
     mainClass in Compile := Some("skinny.standalone.JettyLauncher"),
     scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature")
   )
@@ -29,4 +28,4 @@ lazy val root = (project in file("."))
   // If you'd like to need Scalate precompilation, enable this settings too
   //.settings(scalateSettings)
 
-lazy val skinnyMicroVersion = "1.3.+"
+lazy val skinnyMicroVersion = "2.0.+"
